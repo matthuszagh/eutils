@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+pkg="$1";
+
+pkg_dir=`find $HOME/.cache/aurutils/sync/ -maxdepth 1 -name "$pkg"`;
+
+if [ -d "$pkg_dir" ]
+then
+    cd "$pkg_dir";
+    aur build -fR -d "aur";
+    sudo pacman -S "$pkg";
+else
+   echo "Error: no already built package found!";
+fi
