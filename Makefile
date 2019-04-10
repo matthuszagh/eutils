@@ -8,13 +8,15 @@ install: all
 	cp sage/noise-figure.sage /home/matt/.sage/scripts/noise-figure.sage
 	cp sage/patch-antenna.sage /home/matt/.sage/scripts/patch-antenna.sage
 	install aur-rebuild /usr/local/bin/aur-rebuild
+	install move-book.sh /usr/local/bin/move-book
 
 uninstall:
 	rm -f /usr/local/bin/git-ff-merge
 	rm -f /usr/local/bin/cvt-pdf-txt
 	rm -f /home/matt/.sage/scripts/noise-figure.sage
 	rm -f /home/matt/.sage/scripts/patch-antenna.sage
-	rm -r /usr/local/bin/rebuild
+	rm -f /usr/local/bin/aur-rebuild
+	rm -f /usr/local/bin/move-book
 
 clean:
 	rm -f $(progs)
